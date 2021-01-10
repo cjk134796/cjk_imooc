@@ -10,8 +10,7 @@
 define('IMOOC',realpath('./')); //当前框架所在的目录
 define('CORE',IMOOC.'/core'); //框架核心文件所处目录
 define('APP',IMOOC.'/app'); //项目文件（控制器，模型等）所在目录
-
-
+define('MODULE','app');
 define('DEBUG',true);
 
 if(DEBUG){
@@ -26,5 +25,5 @@ include CORE.'/imooc.php';
 
 spl_autoload_register('\core\imooc::load'); //(魔术方法)new类不存在时会触发这方法
 
-\core\imooc::run();
+\core\imooc::run(); //启动框架
 
