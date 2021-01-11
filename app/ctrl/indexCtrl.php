@@ -1,13 +1,16 @@
 <?php
 namespace app\ctrl;
-class indexCtrl{
+class indexCtrl extends \core\imooc
+{
     public function index()
     {
-        p('it is index');
-        $model = new \core\lib\model();
-        $sql = "select * from cjk_name";
-        $ret = $model->query($sql);
-        p($ret->fetchAll());
+        $temp = \core\lib\conf::get('CTRL','route');
+        $temp = \core\lib\conf::get('ACTION','route');
+        p($temp);
+        $data = 'Hello World';
+        $title = '视图文件';
+        $this->assgin(['da'=>$data,'ti'=>$title]);
+        $this->dispaly('index.html');
     }
 
     public function a(){

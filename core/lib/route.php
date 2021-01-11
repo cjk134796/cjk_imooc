@@ -21,7 +21,7 @@ class route{
                 $this->action = $patharr[1];
                 unset($patharr[1]);
             }else{
-                $this->action = 'index';
+                $this->action = 'index'; //更换成配置项
             }
 
             //url多余部分转换成  GET

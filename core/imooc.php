@@ -4,6 +4,7 @@ namespace core;
 class imooc{
 
     public static $classMap = [];
+    public $assgin;
     static public function run(){
         $route = new \core\lib\route();
         $ctrlClass = $route->ctrl;
@@ -37,5 +38,23 @@ class imooc{
                 return false;
             }
          }
+    }
+
+    public function assgin($name,$value=''){
+         if(is_array($name)){
+             foreach ($name as $k=>$v){
+                 $this->assgin[$k] = $v;
+             }
+         }else{
+             $this->assgin[$name] = $value;
+         }
+    }
+
+    public function dispaly($file){
+        $file = APP.'/views/'.$file;
+        if(is_file($file)){
+            extract($this->assgin);
+            include $file;
+        }
     }
 }
