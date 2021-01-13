@@ -4,6 +4,13 @@ namespace core\lib;
 class conf
 {
     static public $conf = array();
+
+    /**
+     * @param 获取单个配置
+     * @param $file
+     * @return mixed
+     * @throws \Exception
+     */
     static public function get($name,$file)
     {
         /**
@@ -23,6 +30,27 @@ class conf
                 }else{
                     throw new \Exception('没有这个配置项'.$name);
                 }
+            }else{
+                throw new \Exception('找不到配置文件'.$file);
+            }
+        }
+    }
+
+    /**
+     * @param 获取某个配置文件所有的值
+     * @param $file
+     * @return mixed
+     * @throws \Exception
+     */
+    static public function all($file){
+        if(isset(self::$conf[$file])){
+            return self::$conf[$file];
+        }else{
+            $path = IMOOC.'\core\config\\'.$file.'.php';
+            if(is_file($path)){
+                $conf = include $path;
+                self::$conf[$file] = $conf;
+                return $conf;
             }else{
                 throw new \Exception('找不到配置文件'.$file);
             }
