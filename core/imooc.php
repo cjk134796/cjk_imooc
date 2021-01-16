@@ -6,6 +6,7 @@ class imooc{
     public static $classMap = [];
     public $assgin;
     static public function run(){
+        \core\lib\log::init();
         $route = new \core\lib\route();
         $ctrlClass = $route->ctrl;
         $action = $route->action;
@@ -15,6 +16,8 @@ class imooc{
             include $ctrlfile;
             $ctrl = new $cltrClass();
             $ctrl->$action();
+
+            \core\lib\log::log('ctrl:'.$ctrlClass.'      '.'action:'.$action);
         }else{
             throw new \Exception('找不到控制器'.$ctrlClass);
         }
