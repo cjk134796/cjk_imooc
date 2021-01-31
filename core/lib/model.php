@@ -2,7 +2,7 @@
 namespace core\lib;
 use core\lib\conf;
 
-class model extends \PDO
+class model extends \PDO    
 {
     public function __construct()
     {
