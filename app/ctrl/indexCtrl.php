@@ -1,19 +1,14 @@
 <?php
 namespace app\ctrl;
 use core\lib\conf;
+use core\lib\model;
 
 class indexCtrl extends \core\imooc
 {
     public function index()
     {
-        $temp = new \core\lib\model();
-
-        //$temp = \core\lib\conf::get('CTRL','route');
-        //$temp = \core\lib\conf::get('ACTION','route');
-
-        $data = 'Hello World';
-        $title = '视图文件';
-        $this->assgin(['da'=>$data,'ti'=>$title]);
+        $data = 'hello World';
+        $this->assgin('data',$data);
         $this->dispaly('index.html');
     }
 }

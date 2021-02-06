@@ -56,8 +56,15 @@ class imooc{
     public function dispaly($file){
         $file = APP.'/views/'.$file;
         if(is_file($file)){
-            extract($this->assgin);
-            include $file;
+            \Twig_Autoloader::register();
+            $loader = new \Twig_Loader_Filesystem(APP.'/views');
+            $twig = new \Twig_Environment($loader, [
+                'cache' => IMOOC.'/log/twig',
+                'debug' => DEBUG
+            ]);
+
+            $template = $twig->loadTemplate('index.html');
+            $template->display($this->assgin ? $this->assgin : '');
         }
     }
 

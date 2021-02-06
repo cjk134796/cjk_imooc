@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'b80df3bdb7b3caf4ef34be07b32e69d1c6557306',
+    'reference' => '569a16cdfcd4399bc95a420ee5474a153b546e59',
     'name' => 'cjk/php',
   ),
   'versions' => 
@@ -40,7 +40,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'b80df3bdb7b3caf4ef34be07b32e69d1c6557306',
+      'reference' => '569a16cdfcd4399bc95a420ee5474a153b546e59',
     ),
     'filp/whoops' => 
     array (
@@ -80,12 +80,21 @@ private static $installed = array (
     ),
     'symfony/var-dumper' => 
     array (
-      'pretty_version' => 'v5.2.2',
-      'version' => '5.2.2.0',
+      'pretty_version' => 'v5.2.3',
+      'version' => '5.2.3.0',
       'aliases' => 
       array (
       ),
       'reference' => '72ca213014a92223a5d18651ce79ef441c12b694',
+    ),
+    'twig/twig' => 
+    array (
+      'pretty_version' => 'v1.24.0',
+      'version' => '1.24.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8',
     ),
   ),
 );

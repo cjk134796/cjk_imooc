@@ -60,6 +60,16 @@ class ComposerStaticInit4cf9f1661e1090944f628ebf26cb419f
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -73,6 +83,7 @@ class ComposerStaticInit4cf9f1661e1090944f628ebf26cb419f
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit4cf9f1661e1090944f628ebf26cb419f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit4cf9f1661e1090944f628ebf26cb419f::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4cf9f1661e1090944f628ebf26cb419f::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit4cf9f1661e1090944f628ebf26cb419f::$classMap;
 
         }, null, ClassLoader::class);
